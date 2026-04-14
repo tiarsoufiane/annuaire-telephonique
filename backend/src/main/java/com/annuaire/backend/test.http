@@ -1,0 +1,14 @@
+### Récupérer tous les contacts
+GET http://localhost:8080/api/contacts
+
+###
+### Ajouter un nouveau contact
+POST http://localhost:8080/api/contacts
+Content-Type: application/json
+
+{
+    "prenom": "Jean",
+    "nom": "Dupont",
+    "telephone": "0601020304",
+    "email": "jean.dupont@email.com"
+}
