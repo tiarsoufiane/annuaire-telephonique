@@ -24,4 +24,15 @@ public class ContactService {
     public void deleteContact(Long id) {
         contactRepository.deleteById(id);
     }
+    public Contact updateContact(Long id, Contact details) {
+    Contact contact = contactRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Contact non trouvé avec l'id : " + id));
+    
+    contact.setPrenom(details.getPrenom());
+    contact.setNom(details.getNom());
+    contact.setTelephone(details.getTelephone());
+    contact.setEmail(details.getEmail());
+    
+    return contactRepository.save(contact);
+}
 }
